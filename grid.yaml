@@ -6,12 +6,12 @@ services:
     image: selenium/node-chromium:4.27
     shm_size: '2g'
     deploy:
-      replicas: 1
+      replicas: 0
     env_file: .env
 
   firefox:
     image: selenium/node-firefox:4.27
     shm_size: '2g'
     deploy:
-      replicas: 1
+      replicas: 0 
     env_file: .env

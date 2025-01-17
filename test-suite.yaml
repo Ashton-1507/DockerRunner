@@ -3,7 +3,7 @@ services:
   vendor-portal:
     image: ashton152/selenium-docker
     environment:
-      - BROWSER=chrome
+      - BROWSER
       - HUB_HOST=hub
       - TEST_SUITE=vendor-portal.xml
     volumes:
@@ -11,7 +11,7 @@ services:
   flight-reservation:
     image: ashton152/selenium-docker
     environment:
-      - BROWSER=firefox
+      - BROWSER
       - HUB_HOST=hub
       - TEST_SUITE=flight-reservation.xml
     volumes:
