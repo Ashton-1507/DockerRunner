@@ -16,6 +16,8 @@ pipeline{
         always{
             sh "docker-compose -f grid.yaml down"
             sh "docker-compose -f test-suite.yaml down"
+            archieveArtifacts artifacts: 'output/flight/emailable-report.html', followsymlinks: false
+            archieveArtifacts artifacts: 'output/vendor/emailable-report.html', followsymlinks: false
         }
     }
 }
