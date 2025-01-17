@@ -1,0 +1,18 @@
+version: "3"
+services:
+  vendor-portal:
+    image: ashton152/selenium-docker
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=hub
+      - TEST_SUITE=vendor-portal.xml
+    volumes:
+      - ./output/vendor:/home/selenium-docker/test-output
+  flight-reservation:
+    image: ashton152/selenium-docker
+    environment:
+      - BROWSER=firefox
+      - HUB_HOST=hub
+      - TEST_SUITE=flight-reservation.xml
+    volumes:
+      - ./output/flight:/home/selenium-docker/test-output
