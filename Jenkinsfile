@@ -1,12 +1,12 @@
 pipeline{
     agent any
     stages{
-        stage('Bring Grid up'){
+        stage('Grid up'){
             steps{
                 sh "docker-compose -f grid.yaml up -d"
             }
         }
-        stage('Bring Grid up'){
+        stage('test-suite up'){
             steps{
                 sh "docker-compose -f test-suite.yaml up"
             }
