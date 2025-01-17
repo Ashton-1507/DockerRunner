@@ -22,3 +22,19 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_VNC_PASSWORD= abc
+  vendor-portal:
+    image: ashton152/selenium-docker
+    environment:
+      - BROWSER=${BROWSER}
+      - HUB_HOST=hub
+      - TEST_SUITE=vendor-portal.xml
+    volumes:
+      - ./output/vendor:/home/selenium-docker/test-output
+  flight-reservation:
+    image: ashton152/selenium-docker
+    environment:
+      - BROWSER=${BROWSER}
+      - HUB_HOST=hub
+      - TEST_SUITE=flight-reservation.xml
+    volumes:
+      - ./output/flight:/home/selenium-docker/test-output
